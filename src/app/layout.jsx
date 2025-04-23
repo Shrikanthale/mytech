@@ -1,10 +1,9 @@
 "use client";
 
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Open_Sans } from "next/font/google";
 import "./globals.css";
 import ResponsiveSidebar from "../components/resSidebar";
 import { useState, useEffect } from "react";
-import { Open_Sans } from "next/font/google";
 
 const openSans = Open_Sans({
   subsets: ["latin"],
