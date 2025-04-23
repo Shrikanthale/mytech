@@ -1,26 +1,26 @@
 "use client";
 
-import { Geist, Geist_Mono, Open_Sans } from "next/font/google";
+// import { Geist, Geist_Mono, Open_Sans } from "next/font/google";
 import "./globals.css";
 import ResponsiveSidebar from "../components/resSidebar";
 import { useState, useEffect } from "react";
 
-const openSans = Open_Sans({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800"],
-  style: ["normal", "italic"],
-  display: "swap",
-  variable: "--font-open-sans",
-});
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+// const openSans = Open_Sans({
+//   subsets: ["latin"],
+//   weight: ["300", "400", "500", "600", "700", "800"],
+//   style: ["normal", "italic"],
+//   display: "swap",
+//   variable: "--font-open-sans",
+// });
+// const geistSans = Geist({
+//   variable: "--font-geist-sans",
+//   subsets: ["latin"],
+// });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+// const geistMono = Geist_Mono({
+//   variable: "--font-geist-mono",
+//   subsets: ["latin"],
+// });
 
 export default function RootLayout({ children }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -38,9 +38,7 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
-      <body
-        className={`${openSans.variable} ${geistSans.variable} ${geistMono.variable} antialiased h-screen bg-gray-50 overflow-x-hidden`}
-      >
+      <body className={` antialiased h-screen bg-gray-50 overflow-x-hidden`}>
         <header className="lg:hidden fixed top-0 left-0 right-0 bg-white border-b border-gray-200 h-16 flex items-center justify-between px-4 z-30">
           <button
             onClick={toggleSidebar}
