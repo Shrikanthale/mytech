@@ -7,7 +7,6 @@ import { usePathname } from "next/navigation";
 import Image from "next/image";
 import { ChevronDown, ChevronRight } from "lucide-react";
 
-// Images (import paths remain the same)
 import mainLogo from "../../src/assets/dashboardimgs/mainLogo.svg";
 import dashboardinactive from "../../src/assets/dashboardimgs/dashboardinactive.svg";
 import dashboardactive from "../../src/assets/dashboardimgs/dashboardactive.svg";
@@ -218,4 +217,4 @@ export default function ResponsiveSidebar({ isMobileHeader = false, onClose }) {
     </>
   );
 }
-// sidebafr code here 
+// sidebafr code here
