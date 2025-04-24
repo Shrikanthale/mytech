@@ -1,5 +1,5 @@
 "use client";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useEditor, EditorContent } from "@tiptap/react";
@@ -28,6 +28,7 @@ import {
   FaLink,
   FaImage,
   FaPlus,
+  FaExclamationTriangle,
 } from "react-icons/fa";
 
 import { products } from "../../../datastore/Products";
@@ -162,9 +163,12 @@ export default function EditProduct({ params }) {
     description: findProduct?.description || "",
     images: [],
     tags: findProduct?.tags || ["Watch", "Gadget"],
+    discount: "",
+    vat: "",
   });
 
-  // New state for tag input
+  const [errors, setErrors] = useState({});
+
   const [tagInput, setTagInput] = useState("");
   const tagInputRef = useRef(null);
 
@@ -176,15 +180,45 @@ export default function EditProduct({ params }) {
         types: ["heading", "paragraph"],
       }),
     ],
-    content:
-      formData.description ||
-      `
-      <p>Smartwatch for step-counter notify you incoming calls, SMS notifications, when you connect the smartphone with this android smartwatch,and vibrate to alert you if your phone notification is vibrating. You can reject calls and view message directly from your watch. A best gift for family and friends!</p>
-    `,
+    content: formData.description || "<p></p>",
   });
+
+  const validateNumericField = (name, value) => {
+    if (value === "") return true;
+
+    const numericFields = [
+      "price",
+      "quantity",
+      "weight",
+      "height",
+      "width",
+      "length",
+      "discount",
+      "vat",
+    ];
+    if (numericFields.includes(name)) {
+      return !isNaN(parseFloat(value)) && isFinite(value);
+    }
+    return true;
+  };
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
+
+    if (!validateNumericField(name, value)) {
+      setErrors((prev) => ({
+        ...prev,
+        [name]: "This field must be a number",
+      }));
+      return;
+    } else {
+      setErrors((prev) => {
+        const newErrors = { ...prev };
+        delete newErrors[name];
+        return newErrors;
+      });
+    }
+
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
@@ -195,6 +229,7 @@ export default function EditProduct({ params }) {
       images: [...prev.images, ...files],
     }));
   };
+
   const updateVariation = (index, field, value) => {
     setFormData((prev) => {
       const updatedVariations = [...prev.variations];
@@ -257,7 +292,57 @@ export default function EditProduct({ params }) {
     }
   };
 
+  const validateForm = () => {
+    const newErrors = {};
+
+    if (!formData.name.trim()) {
+      newErrors.name = "Product name is required";
+    }
+    if (!formData.quantity.trim()) {
+      newErrors.quantity = "Product quantity is required";
+    }
+    if (!formData.price.trim()) {
+      newErrors.price = "Product price is required";
+    }
+
+    const editorContent = editor?.getHTML() || "";
+    if (editorContent === "<p></p>" || !editorContent.trim()) {
+      newErrors.description = "Product description is required";
+    }
+    const numericFields = [
+      { name: "price", label: "Price" },
+      { name: "quantity", label: "Quantity" },
+      { name: "weight", label: "Weight" },
+      { name: "height", label: "Height" },
+      { name: "width", label: "Width" },
+      { name: "length", label: "Length" },
+      { name: "discount", label: "Discount" },
+      { name: "vat", label: "VAT" },
+    ];
+
+    numericFields.forEach((field) => {
+      if (
+        formData[field.name] &&
+        !validateNumericField(field.name, formData[field.name])
+      ) {
+        newErrors[field.name] = `${field.label} must be a number`;
+      }
+    });
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
   const handleSaveProduct = () => {
+    if (!validateForm()) {
+      // Scroll to the first error
+      const firstErrorField = document.querySelector(".error-field");
+      if (firstErrorField) {
+        firstErrorField.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+      return;
+    }
+
     if (editor) {
       const editorContent = editor.getHTML();
       setFormData((prev) => ({
@@ -351,7 +436,7 @@ export default function EditProduct({ params }) {
 
               <div className="mb-4">
                 <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Product Name
+                  Product Name <span className="text-red-500">*</span>
                 </label>
                 <input
                   type="text"
@@ -359,18 +444,35 @@ export default function EditProduct({ params }) {
                   value={formData.name}
                   onChange={handleInputChange}
                   placeholder="Enter product name"
-                  className="w-full p-2 border border-gray-300 rounded-md text-gray-500 bg-gray-100"
+                  className={`w-full p-2 border ${
+                    errors.name ? "border-red-500" : "border-gray-300"
+                  } rounded-md text-gray-500 bg-gray-100 error-field`}
                 />
+                {errors.name && (
+                  <p className="text-red-500 text-xs mt-1 flex items-center">
+                    <FaExclamationTriangle className="mr-1" /> {errors.name}
+                  </p>
+                )}
               </div>
 
               <div className="mb-4">
                 <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Description
+                  Description <span className="text-red-500">*</span>
                 </label>
-                <div className="border border-gray-300 rounded-md overflow-hidden text-gray-500 bg-gray-100">
+                <div
+                  className={`border ${
+                    errors.description ? "border-red-500" : "border-gray-300"
+                  } rounded-md overflow-hidden text-gray-500 bg-gray-100 error-field`}
+                >
                   <MenuBar editor={editor} />
                   <EditorContent editor={editor} className="p-2 min-h-32" />
                 </div>
+                {errors.description && (
+                  <p className="text-red-500 text-xs mt-1 flex items-center">
+                    <FaExclamationTriangle className="mr-1" />{" "}
+                    {errors.description}
+                  </p>
+                )}
               </div>
             </div>
 
@@ -433,7 +535,7 @@ export default function EditProduct({ params }) {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="col-span-1 md:col-span-2">
                   <label className="block text-sm font-medium text-gray-700 mb-1">
-                    Base Price
+                    Base Price <span className="text-red-500">*</span>
                   </label>
                   <div className="relative">
                     <span className="absolute left-3 top-2 text-gray-500">
@@ -445,9 +547,16 @@ export default function EditProduct({ params }) {
                       value={formData.price}
                       onChange={handleInputChange}
                       placeholder="0.00"
-                      className="w-full p-2 pl-6 border border-gray-300 rounded-md text-gray-500 bg-gray-100"
+                      className={`w-full p-2 pl-6 border ${
+                        errors.price ? "border-red-500" : "border-gray-300"
+                      } rounded-md text-gray-500 bg-gray-100 error-field`}
                     />
                   </div>
+                  {errors.price && (
+                    <p className="text-red-500 text-xs mt-1 flex items-center">
+                      <FaExclamationTriangle className="mr-1" /> {errors.price}
+                    </p>
+                  )}
                 </div>
 
                 <div>
@@ -466,9 +575,20 @@ export default function EditProduct({ params }) {
                   </label>
                   <input
                     type="text"
-                    className="w-full p-2 border border-gray-300 rounded-md text-gray-500 bg-gray-100"
+                    name="discount"
+                    value={formData.discount}
+                    onChange={handleInputChange}
+                    className={`w-full p-2 border ${
+                      errors.discount ? "border-red-500" : "border-gray-300"
+                    } rounded-md text-gray-500 bg-gray-100 error-field`}
                     placeholder="0%"
                   />
+                  {errors.discount && (
+                    <p className="text-red-500 text-xs mt-1 flex items-center">
+                      <FaExclamationTriangle className="mr-1" />{" "}
+                      {errors.discount}
+                    </p>
+                  )}
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">
@@ -486,9 +606,19 @@ export default function EditProduct({ params }) {
                   </label>
                   <input
                     type="text"
-                    className="w-full p-2 border border-gray-300 rounded-md text-gray-500 bg-gray-100"
+                    name="vat"
+                    value={formData.vat}
+                    onChange={handleInputChange}
+                    className={`w-full p-2 border ${
+                      errors.vat ? "border-red-500" : "border-gray-300"
+                    } rounded-md text-gray-500 bg-gray-100 error-field`}
                     placeholder="0%"
                   />
+                  {errors.vat && (
+                    <p className="text-red-500 text-xs mt-1 flex items-center">
+                      <FaExclamationTriangle className="mr-1" /> {errors.vat}
+                    </p>
+                  )}
                 </div>
               </div>
             </div>
@@ -526,7 +656,7 @@ export default function EditProduct({ params }) {
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">
-                    Quantity
+                    Quantity <span className="text-red-500">*</span>
                   </label>
                   <input
                     type="text"
@@ -534,8 +664,16 @@ export default function EditProduct({ params }) {
                     value={formData.quantity}
                     onChange={handleInputChange}
                     placeholder="100"
-                    className="w-full p-2 border border-gray-300 rounded-md text-gray-500 bg-gray-100"
+                    className={`w-full p-2 border ${
+                      errors.quantity ? "border-red-500" : "border-gray-300"
+                    } rounded-md text-gray-500 bg-gray-100 error-field`}
                   />
+                  {errors.quantity && (
+                    <p className="text-red-500 text-xs mt-1 flex items-center">
+                      <FaExclamationTriangle className="mr-1" />{" "}
+                      {errors.quantity}
+                    </p>
+                  )}
                 </div>
               </div>
             </div>
@@ -626,8 +764,15 @@ export default function EditProduct({ params }) {
                     value={formData.weight}
                     onChange={handleInputChange}
                     placeholder="0.0 kg"
-                    className="w-full p-2 border border-gray-300 rounded-md text-gray-800 bg-gray-100"
+                    className={`w-full p-2 border ${
+                      errors.weight ? "border-red-500" : "border-gray-300"
+                    } rounded-md text-gray-800 bg-gray-100 error-field`}
                   />
+                  {errors.weight && (
+                    <p className="text-red-500 text-xs mt-1 flex items-center">
+                      <FaExclamationTriangle className="mr-1" /> {errors.weight}
+                    </p>
+                  )}
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">
@@ -639,8 +784,15 @@ export default function EditProduct({ params }) {
                     value={formData.height}
                     onChange={handleInputChange}
                     placeholder="0.0 cm"
-                    className="w-full p-2 border border-gray-300 rounded-md text-gray-800 bg-gray-100"
+                    className={`w-full p-2 border ${
+                      errors.height ? "border-red-500" : "border-gray-300"
+                    } rounded-md text-gray-800 bg-gray-100 error-field`}
                   />
+                  {errors.height && (
+                    <p className="text-red-500 text-xs mt-1 flex items-center">
+                      <FaExclamationTriangle className="mr-1" /> {errors.height}
+                    </p>
+                  )}
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">
@@ -652,8 +804,15 @@ export default function EditProduct({ params }) {
                     value={formData.length}
                     onChange={handleInputChange}
                     placeholder="0.0 cm"
-                    className="w-full p-2 border border-gray-300 rounded-md text-gray-800 bg-gray-100"
+                    className={`w-full p-2 border ${
+                      errors.length ? "border-red-500" : "border-gray-300"
+                    } rounded-md text-gray-800 bg-gray-100 error-field`}
                   />
+                  {errors.length && (
+                    <p className="text-red-500 text-xs mt-1 flex items-center">
+                      <FaExclamationTriangle className="mr-1" /> {errors.length}
+                    </p>
+                  )}
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">
@@ -665,8 +824,15 @@ export default function EditProduct({ params }) {
                     value={formData.width}
                     onChange={handleInputChange}
                     placeholder="0.0 cm"
-                    className="w-full p-2 border border-gray-300 rounded-md text-gray-800 bg-gray-100"
+                    className={`w-full p-2 border ${
+                      errors.width ? "border-red-500" : "border-gray-300"
+                    } rounded-md text-gray-800 bg-gray-100 error-field`}
                   />
+                  {errors.width && (
+                    <p className="text-red-500 text-xs mt-1 flex items-center">
+                      <FaExclamationTriangle className="mr-1" /> {errors.width}
+                    </p>
+                  )}
                 </div>
               </div>
             </div>
@@ -754,6 +920,20 @@ export default function EditProduct({ params }) {
                 </select>
               </div>
             </div>
+            {Object.keys(errors).length > 0 && (
+              <div className="bg-red-50 rounded-md shadow-sm p-6 mb-6 border border-red-200">
+                <h2 className="text-lg font-medium text-red-800 mb-2 flex items-center">
+                  <FaExclamationTriangle className="mr-2" /> Validation Issues
+                </h2>
+                <ul className="list-disc list-inside text-red-700 text-sm">
+                  {Object.entries(errors).map(([field, message]) => (
+                    <li key={field} className="mb-1">
+                      {message}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </div>
         </div>
       </div>
