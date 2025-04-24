@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useEditor, EditorContent } from "@tiptap/react";
@@ -31,6 +31,7 @@ import {
 } from "react-icons/fa";
 
 import { products } from "../../../datastore/Products";
+
 const MenuBar = ({ editor }) => {
   if (!editor) {
     return null;
@@ -143,21 +144,26 @@ export default function EditProduct({ params }) {
   );
 
   const [formData, setFormData] = useState({
-    name: "",
-    price: "",
-    sku: "",
-    barcode: "",
-    quantity: "",
-    status: "",
-    category: "",
-    weight: "",
-    height: "",
-    width: "",
-    length: "",
-    variations: [],
-    description: "",
+    name: findProduct?.name || "",
+    price: findProduct?.price || "",
+    sku: findProduct?.sku || "",
+    barcode: findProduct?.barcode || "",
+    quantity: findProduct?.quantity || "",
+    status: findProduct?.status || "Published",
+    category: findProduct?.category || "",
+    weight: findProduct?.weight || "",
+    height: findProduct?.height || "",
+    width: findProduct?.width || "",
+    length: findProduct?.length || "",
+    variations: findProduct?.variations || [],
+    description: findProduct?.description || "",
     images: [],
+    tags: findProduct?.tags || ["Watch", "Gadget"],
   });
+
+  // New state for tag input
+  const [tagInput, setTagInput] = useState("");
+  const tagInputRef = useRef(null);
 
   const editor = useEditor({
     extensions: [
@@ -167,7 +173,9 @@ export default function EditProduct({ params }) {
         types: ["heading", "paragraph"],
       }),
     ],
-    content: `
+    content:
+      formData.description ||
+      `
       <p>Smartwatch for step-counter notify you incoming calls, SMS notifications, when you connect the smartphone with this android smartwatch,and vibrate to alert you if your phone notification is vibrating. You can reject calls and view message directly from your watch. A best gift for family and friends!</p>
     `,
   });
@@ -184,6 +192,19 @@ export default function EditProduct({ params }) {
       images: [...prev.images, ...files],
     }));
   };
+  const updateVariation = (index, field, value) => {
+    setFormData((prev) => {
+      const updatedVariations = [...prev.variations];
+      updatedVariations[index] = {
+        ...updatedVariations[index],
+        [field]: value,
+      };
+      return {
+        ...prev,
+        variations: updatedVariations,
+      };
+    });
+  };
 
   const addVariation = () => {
     setFormData((prev) => ({
@@ -199,10 +220,56 @@ export default function EditProduct({ params }) {
     }));
   };
 
+  const handleTagInputChange = (e) => {
+    setTagInput(e.target.value);
+  };
+
+  const handleTagInputKeyDown = (e) => {
+    if (e.key === "Enter" && tagInput.trim()) {
+      e.preventDefault();
+      addTag(tagInput.trim());
+      setTagInput("");
+    }
+  };
+
+  const addTag = (tag) => {
+    if (tag && !formData.tags.includes(tag)) {
+      setFormData((prev) => ({
+        ...prev,
+        tags: [...prev.tags, tag],
+      }));
+    }
+  };
+
+  const removeTag = (tagToRemove) => {
+    setFormData((prev) => ({
+      ...prev,
+      tags: prev.tags.filter((tag) => tag !== tagToRemove),
+    }));
+  };
+
+  const focusTagInput = () => {
+    if (tagInputRef.current) {
+      tagInputRef.current.focus();
+    }
+  };
+
+  const handleSaveProduct = () => {
+    if (editor) {
+      const editorContent = editor.getHTML();
+      setFormData((prev) => ({
+        ...prev,
+        description: editorContent,
+      }));
+    }
+    console.log("Saving product:", { ...formData });
+    alert("Product saved successfully!");
+  };
+
   return (
     <div className="bg-gray-50 min-h-screen">
       <TopNavbar />
-      <div className=" mx-auto p-4">
+      <div className="mx-auto p-4">
         <div className="flex justify-between items-center mb-6 flex-col md:flex-row">
           <div>
             <h1 className="text-2xl font-semibold text-gray-800">
@@ -241,11 +308,16 @@ export default function EditProduct({ params }) {
             </div>
           </div>
           <div className="flex items-center gap-2 mt-4 md:mt-0">
-            <button className="px-4 py-2 border border-gray-300 rounded-md text-gray-700 flex items-center gap-1">
-              <FaTimes className="text-gray-500" />
-              <span>Cancel</span>
-            </button>
-            <button className="px-4 py-2 bg-[#2086BF] text-white rounded-md flex items-center gap-1">
+            <Link href="/products">
+              <button className="px-4 py-2 border border-gray-300 rounded-md text-gray-700 flex items-center gap-1 cursor-pointer">
+                <FaTimes className="text-gray-500" />
+                <span>Cancel</span>
+              </button>
+            </Link>
+            <button
+              onClick={handleSaveProduct}
+              className="px-4 py-2 bg-[#2086BF] text-white rounded-md flex items-center gap-1 cursor-pointer"
+            >
               <Image src={saveicon} alt="" height={"auto"} width={"auto"} />
               <span>Save Product</span>
             </button>
@@ -268,6 +340,7 @@ export default function EditProduct({ params }) {
                   name="name"
                   value={formData.name}
                   onChange={handleInputChange}
+                  placeholder="Enter product name"
                   className="w-full p-2 border border-gray-300 rounded-md text-gray-500 bg-gray-100"
                 />
               </div>
@@ -353,6 +426,7 @@ export default function EditProduct({ params }) {
                       name="price"
                       value={formData.price}
                       onChange={handleInputChange}
+                      placeholder="0.00"
                       className="w-full p-2 pl-6 border border-gray-300 rounded-md text-gray-500 bg-gray-100"
                     />
                   </div>
@@ -415,6 +489,7 @@ export default function EditProduct({ params }) {
                     name="sku"
                     value={formData.sku}
                     onChange={handleInputChange}
+                    placeholder="PROD-001"
                     className="w-full p-2 border border-gray-300 rounded-md text-gray-500 bg-gray-100"
                   />
                 </div>
@@ -427,6 +502,7 @@ export default function EditProduct({ params }) {
                     name="barcode"
                     value={formData.barcode}
                     onChange={handleInputChange}
+                    placeholder="123456789012"
                     className="w-full p-2 border border-gray-300 rounded-md text-gray-500 bg-gray-100"
                   />
                 </div>
@@ -439,6 +515,7 @@ export default function EditProduct({ params }) {
                     name="quantity"
                     value={formData.quantity}
                     onChange={handleInputChange}
+                    placeholder="100"
                     className="w-full p-2 border border-gray-300 rounded-md text-gray-500 bg-gray-100"
                   />
                 </div>
@@ -479,6 +556,7 @@ export default function EditProduct({ params }) {
                           onChange={(e) =>
                             updateVariation(index, "value", e.target.value)
                           }
+                          placeholder="Enter variation value"
                           className="w-full p-2 border border-gray-300 rounded-md text-gray-500 bg-gray-100"
                         />
                         <div className="ml-2 cursor-pointer">
@@ -529,6 +607,7 @@ export default function EditProduct({ params }) {
                     name="weight"
                     value={formData.weight}
                     onChange={handleInputChange}
+                    placeholder="0.0 kg"
                     className="w-full p-2 border border-gray-300 rounded-md text-gray-800 bg-gray-100"
                   />
                 </div>
@@ -541,6 +620,7 @@ export default function EditProduct({ params }) {
                     name="height"
                     value={formData.height}
                     onChange={handleInputChange}
+                    placeholder="0.0 cm"
                     className="w-full p-2 border border-gray-300 rounded-md text-gray-800 bg-gray-100"
                   />
                 </div>
@@ -553,6 +633,7 @@ export default function EditProduct({ params }) {
                     name="length"
                     value={formData.length}
                     onChange={handleInputChange}
+                    placeholder="0.0 cm"
                     className="w-full p-2 border border-gray-300 rounded-md text-gray-800 bg-gray-100"
                   />
                 </div>
@@ -565,6 +646,7 @@ export default function EditProduct({ params }) {
                     name="width"
                     value={formData.width}
                     onChange={handleInputChange}
+                    placeholder="0.0 cm"
                     className="w-full p-2 border border-gray-300 rounded-md text-gray-800 bg-gray-100"
                   />
                 </div>
@@ -596,15 +678,38 @@ export default function EditProduct({ params }) {
                 <label className="block text-sm font-medium text-gray-700 mb-1">
                   Product Tags
                 </label>
-                <div className="flex items-center border border-gray-300 rounded-md bg-gray-100 p-1.5 gap-2 py-2 flex-wrap">
-                  <div className="flex flex-wrap gap-2">
-                    <span className="inline-flex items-center px-2 py-1 bg-[#EAF8FF] text-[#2086BF] text-xs rounded-md">
-                      Watch <button className="ml-2 text-#2086BF ">×</button>
+                <div
+                  onClick={focusTagInput}
+                  className="flex items-center flex-wrap border border-gray-300 rounded-md bg-gray-100 p-1 gap-2 py-1 min-h-12"
+                >
+                  {formData.tags.map((tag, index) => (
+                    <span
+                      key={index}
+                      className="inline-flex items-center px-2  bg-[#EAF8FF] text-[#2086BF] text-xs rounded-md"
+                    >
+                      {tag}
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          removeTag(tag);
+                        }}
+                        className="ml-2 text-[#2086BF] cursor-pointer "
+                      >
+                        ×
+                      </button>
                     </span>
-                    <span className="inline-flex items-center px-2 py-1 bg-[#EAF8FF] text-[#2086BF] text-xs rounded-md">
-                      Gadget <button className="ml-2 text-#2086BF">×</button>
-                    </span>
-                  </div>
+                  ))}
+                  <input
+                    ref={tagInputRef}
+                    type="text"
+                    value={tagInput}
+                    onChange={handleTagInputChange}
+                    onKeyDown={handleTagInputKeyDown}
+                    placeholder={
+                      formData.tags.length ? "" : "Type tag and press Enter"
+                    }
+                    className="outline-none border-none bg-transparent px-1 text-sm flex-grow min-w-20 text-gray-500"
+                  />
                 </div>
               </div>
             </div>
