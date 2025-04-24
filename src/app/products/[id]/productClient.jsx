@@ -157,8 +157,12 @@ export default function EditProduct(productObj) {
     length: findProduct.length,
     variations: findProduct.variations || [],
     description: findProduct.description,
+    tags: findProduct.tags || ["Watch", "Gadget"],
     images: [], // Array to store uploaded images
   });
+
+  // New state for managing the tag input
+  const [tagInput, setTagInput] = useState("");
 
   const editor = useEditor({
     extensions: [
@@ -186,6 +190,7 @@ export default function EditProduct(productObj) {
     }));
   };
 
+  // Add new variation
   const addVariation = () => {
     setFormData((prev) => ({
       ...prev,
@@ -193,10 +198,50 @@ export default function EditProduct(productObj) {
     }));
   };
 
+  // Remove a variation at specified index
   const removeVariation = (index) => {
     setFormData((prev) => ({
       ...prev,
       variations: prev.variations.filter((_, i) => i !== index),
+    }));
+  };
+
+  // Update variation property
+  const updateVariation = (index, field, value) => {
+    setFormData((prev) => {
+      const updatedVariations = [...prev.variations];
+      updatedVariations[index] = {
+        ...updatedVariations[index],
+        [field]: value,
+      };
+      return { ...prev, variations: updatedVariations };
+    });
+  };
+
+  // Handle tag input
+  const handleTagInputChange = (e) => {
+    setTagInput(e.target.value);
+  };
+
+  // Add a new tag when Enter is pressed
+  const handleTagKeyDown = (e) => {
+    if (e.key === "Enter" && tagInput.trim() !== "") {
+      e.preventDefault();
+      if (!formData.tags.includes(tagInput.trim())) {
+        setFormData((prev) => ({
+          ...prev,
+          tags: [...prev.tags, tagInput.trim()],
+        }));
+      }
+      setTagInput("");
+    }
+  };
+
+  // Remove a tag
+  const removeTag = (tagToRemove) => {
+    setFormData((prev) => ({
+      ...prev,
+      tags: prev.tags.filter((tag) => tag !== tagToRemove),
     }));
   };
 
@@ -581,7 +626,6 @@ export default function EditProduct(productObj) {
 
           <div className="lg:col-span-1">
             {/* Category */}
-            {/* Category */}
             <div className="bg-white rounded-md shadow-sm p-6 mb-6">
               <h2 className="text-lg font-medium text-gray-800 mb-4">
                 Category
@@ -607,12 +651,28 @@ export default function EditProduct(productObj) {
                 </label>
                 <div className="flex items-center border border-gray-300 rounded-md bg-gray-100 p-1.5 gap-2 py-2 flex-wrap">
                   <div className="flex flex-wrap gap-2">
-                    <span className="inline-flex items-center px-2 py-1 bg-[#EAF8FF] text-[#2086BF] text-xs rounded-md">
-                      Watch <button className="ml-2 text-#2086BF ">×</button>
-                    </span>
-                    <span className="inline-flex items-center px-2 py-1 bg-[#EAF8FF] text-[#2086BF] text-xs rounded-md">
-                      Gadget <button className="ml-2 text-#2086BF">×</button>
-                    </span>
+                    {formData.tags.map((tag, index) => (
+                      <span
+                        key={index}
+                        className="inline-flex items-center px-2 py-1 bg-[#EAF8FF] text-[#2086BF] text-xs rounded-md"
+                      >
+                        {tag}{" "}
+                        <button
+                          onClick={() => removeTag(tag)}
+                          className="ml-2 text-[#2086BF] cursor-pointer"
+                        >
+                          ×
+                        </button>
+                      </span>
+                    ))}
+                    <input
+                      type="text"
+                      value={tagInput}
+                      onChange={handleTagInputChange}
+                      onKeyDown={handleTagKeyDown}
+                      placeholder="Add tag and press Enter"
+                      className="border-none bg-transparent focus:outline-none text-sm px-1 text-gray-500"
+                    />
                   </div>
                 </div>
               </div>
