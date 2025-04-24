@@ -685,7 +685,7 @@ export default function EditProduct({ params }) {
                   {formData.tags.map((tag, index) => (
                     <span
                       key={index}
-                      className="inline-flex items-center px-2  bg-[#EAF8FF] text-[#2086BF] text-xs rounded-md"
+                      className="inline-flex items-center px-2 p-0.5  bg-[#EAF8FF] text-[#2086BF] text-xs rounded-sm"
                     >
                       {tag}
                       <button

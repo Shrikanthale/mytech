@@ -654,7 +654,7 @@ export default function EditProduct(productObj) {
                     {formData.tags.map((tag, index) => (
                       <span
                         key={index}
-                        className="inline-flex items-center px-2 py-1 bg-[#EAF8FF] text-[#2086BF] text-xs rounded-md"
+                        className="inline-flex items-center px-2 py-1 bg-[#EAF8FF] text-[#2086BF] text-xs rounded-sm p-0.5"
                       >
                         {tag}{" "}
                         <button
