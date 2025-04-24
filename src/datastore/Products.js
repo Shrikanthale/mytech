@@ -16,6 +16,8 @@ export const products = [
       { type: "Color", value: "Black" },
       { type: "Color", value: "White" },
     ],
+    description:
+      "Smartwatch for step-counter notify you incoming calls, SMS notifications, when you connect the smartphone with this android smartwatch,and vibrate to alert you if your phone notification is vibrating. You can reject calls and view message directly from your watch. A best gift for family and friends!",
   },
   {
     id: 34,
@@ -34,6 +36,8 @@ export const products = [
       { type: "Color", value: "Black" },
       { type: "Color", value: "Gray" },
     ],
+    description:
+      "Smartwatch for step-counter notify you incoming calls, SMS notifications, when you connect the smartphone with this android smartwatch,and vibrate to alert you if your phone notification is vibrating. You can reject calls and view message directly from your watch. A best gift for family and friends!",
   },
   {
     id: 35,
@@ -52,6 +56,8 @@ export const products = [
       { type: "Color", value: "Brown" },
       { type: "Color", value: "Tan" },
     ],
+    description:
+      "Smartwatch for step-counter notify you incoming calls, SMS notifications, when you connect the smartphone with this android smartwatch,and vibrate to alert you if your phone notification is vibrating. You can reject calls and view message directly from your watch. A best gift for family and friends!",
   },
   {
     id: 36,
@@ -70,6 +76,8 @@ export const products = [
       { type: "Color", value: "Gray" },
       { type: "Color", value: "Navy" },
     ],
+    description:
+      "Smartwatch for step-counter notify you incoming calls, SMS notifications, when you connect the smartphone with this android smartwatch,and vibrate to alert you if your phone notification is vibrating. You can reject calls and view message directly from your watch. A best gift for family and friends!",
   },
   {
     id: 37,
@@ -88,6 +96,8 @@ export const products = [
       { type: "Color", value: "Silver" },
       { type: "Color", value: "Red" },
     ],
+    description:
+      "Smartwatch for step-counter notify you incoming calls, SMS notifications, when you connect the smartphone with this android smartwatch,and vibrate to alert you if your phone notification is vibrating. You can reject calls and view message directly from your watch. A best gift for family and friends!",
   },
   {
     id: 38,
@@ -106,6 +116,8 @@ export const products = [
       { type: "Color", value: "White" },
       { type: "Color", value: "Black" },
     ],
+    description:
+      "Smartwatch for step-counter notify you incoming calls, SMS notifications, when you connect the smartphone with this android smartwatch,and vibrate to alert you if your phone notification is vibrating. You can reject calls and view message directly from your watch. A best gift for family and friends!",
   },
   {
     id: 39,
@@ -124,6 +136,8 @@ export const products = [
       { type: "Color", value: "Multi" },
       { type: "Color", value: "Black" },
     ],
+    description:
+      "Smartwatch for step-counter notify you incoming calls, SMS notifications, when you connect the smartphone with this android smartwatch,and vibrate to alert you if your phone notification is vibrating. You can reject calls and view message directly from your watch. A best gift for family and friends!",
   },
   {
     id: 40,
@@ -142,6 +156,8 @@ export const products = [
       { type: "Color", value: "Black" },
       { type: "Color", value: "Charcoal" },
     ],
+    description:
+      "Smartwatch for step-counter notify you incoming calls, SMS notifications, when you connect the smartphone with this android smartwatch,and vibrate to alert you if your phone notification is vibrating. You can reject calls and view message directly from your watch. A best gift for family and friends!",
   },
   {
     id: 41,
@@ -160,6 +176,8 @@ export const products = [
       { type: "Color", value: "Black" },
       { type: "Lighting", value: "RGB" },
     ],
+    description:
+      "Smartwatch for step-counter notify you incoming calls, SMS notifications, when you connect the smartphone with this android smartwatch,and vibrate to alert you if your phone notification is vibrating. You can reject calls and view message directly from your watch. A best gift for family and friends!",
   },
   {
     id: 42,
@@ -178,6 +196,8 @@ export const products = [
       { type: "Color", value: "White" },
       { type: "Feature", value: "Motion Sensor" },
     ],
+    description:
+      "Smartwatch for step-counter notify you incoming calls, SMS notifications, when you connect the smartphone with this android smartwatch,and vibrate to alert you if your phone notification is vibrating. You can reject calls and view message directly from your watch. A best gift for family and friends!",
   },
   {
     id: 43,
@@ -196,6 +216,8 @@ export const products = [
       { type: "Color", value: "White" },
       { type: "Length", value: "1.5m" },
     ],
+    description:
+      "Smartwatch for step-counter notify you incoming calls, SMS notifications, when you connect the smartphone with this android smartwatch,and vibrate to alert you if your phone notification is vibrating. You can reject calls and view message directly from your watch. A best gift for family and friends!",
   },
   {
     id: 44,
@@ -214,6 +236,8 @@ export const products = [
       { type: "Color", value: "Black" },
       { type: "Power", value: "20W" },
     ],
+    description:
+      "Smartwatch for step-counter notify you incoming calls, SMS notifications, when you connect the smartphone with this android smartwatch,and vibrate to alert you if your phone notification is vibrating. You can reject calls and view message directly from your watch. A best gift for family and friends!",
   },
   {
     id: 45,
@@ -232,6 +256,8 @@ export const products = [
       { type: "Color", value: "Black" },
       { type: "Lens", value: "Polarized" },
     ],
+    description:
+      "Smartwatch for step-counter notify you incoming calls, SMS notifications, when you connect the smartphone with this android smartwatch,and vibrate to alert you if your phone notification is vibrating. You can reject calls and view message directly from your watch. A best gift for family and friends!",
   },
   {
     id: 46,
@@ -250,6 +276,8 @@ export const products = [
       { type: "Color", value: "Green" },
       { type: "Capacity", value: "40L" },
     ],
+    description:
+      "Smartwatch for step-counter notify you incoming calls, SMS notifications, when you connect the smartphone with this android smartwatch,and vibrate to alert you if your phone notification is vibrating. You can reject calls and view message directly from your watch. A best gift for family and friends!",
   },
   {
     id: 47,
@@ -268,6 +296,8 @@ export const products = [
       { type: "Color", value: "Matte Black" },
       { type: "Size", value: "450ml" },
     ],
+    description:
+      "Smartwatch for step-counter notify you incoming calls, SMS notifications, when you connect the smartphone with this android smartwatch,and vibrate to alert you if your phone notification is vibrating. You can reject calls and view message directly from your watch. A best gift for family and friends!",
   },
   {
     id: 48,
@@ -286,6 +316,8 @@ export const products = [
       { type: "Color", value: "White" },
       { type: "Light", value: "Warm" },
     ],
+    description:
+      "Smartwatch for step-counter notify you incoming calls, SMS notifications, when you connect the smartphone with this android smartwatch,and vibrate to alert you if your phone notification is vibrating. You can reject calls and view message directly from your watch. A best gift for family and friends!",
   },
   {
     id: 49,
@@ -304,6 +336,8 @@ export const products = [
       { type: "Color", value: "Purple" },
       { type: "Material", value: "Cotton" },
     ],
+    description:
+      "Smartwatch for step-counter notify you incoming calls, SMS notifications, when you connect the smartphone with this android smartwatch,and vibrate to alert you if your phone notification is vibrating. You can reject calls and view message directly from your watch. A best gift for family and friends!",
   },
   {
     id: 50,
@@ -322,6 +356,8 @@ export const products = [
       { type: "Color", value: "Black" },
       { type: "Fans", value: "Dual" },
     ],
+    description:
+      "Smartwatch for step-counter notify you incoming calls, SMS notifications, when you connect the smartphone with this android smartwatch,and vibrate to alert you if your phone notification is vibrating. You can reject calls and view message directly from your watch. A best gift for family and friends!",
   },
   {
     id: 51,
@@ -358,6 +394,8 @@ export const products = [
       { type: "Color", value: "RGB" },
       { type: "Base", value: "E27" },
     ],
+    description:
+      "Smartwatch for step-counter notify you incoming calls, SMS notifications, when you connect the smartphone with this android smartwatch,and vibrate to alert you if your phone notification is vibrating. You can reject calls and view message directly from your watch. A best gift for family and friends!",
   },
   {
     id: 53,
@@ -376,6 +414,8 @@ export const products = [
       { type: "Color", value: "Black" },
       { type: "Capacity", value: "20000mAh" },
     ],
+    description:
+      "Smartwatch for step-counter notify you incoming calls, SMS notifications, when you connect the smartphone with this android smartwatch,and vibrate to alert you if your phone notification is vibrating. You can reject calls and view message directly from your watch. A best gift for family and friends!",
   },
   {
     id: 54,
@@ -394,6 +434,8 @@ export const products = [
       { type: "Color", value: "Blue" },
       { type: "Color", value: "Black" },
     ],
+    description:
+      "Smartwatch for step-counter notify you incoming calls, SMS notifications, when you connect the smartphone with this android smartwatch,and vibrate to alert you if your phone notification is vibrating. You can reject calls and view message directly from your watch. A best gift for family and friends!",
   },
   {
     id: 55,
@@ -412,6 +454,8 @@ export const products = [
       { type: "Color", value: "Black" },
       { type: "Color", value: "Brown" },
     ],
+    description:
+      "Smartwatch for step-counter notify you incoming calls, SMS notifications, when you connect the smartphone with this android smartwatch,and vibrate to alert you if your phone notification is vibrating. You can reject calls and view message directly from your watch. A best gift for family and friends!",
   },
   {
     id: 56,
@@ -430,6 +474,8 @@ export const products = [
       { type: "Color", value: "Navy" },
       { type: "Capacity", value: "35L" },
     ],
+    description:
+      "Smartwatch for step-counter notify you incoming calls, SMS notifications, when you connect the smartphone with this android smartwatch,and vibrate to alert you if your phone notification is vibrating. You can reject calls and view message directly from your watch. A best gift for family and friends!",
   },
   {
     id: 57,
@@ -448,6 +494,8 @@ export const products = [
       { type: "Color", value: "Silver" },
       { type: "Color", value: "Black" },
     ],
+    description:
+      "Smartwatch for step-counter notify you incoming calls, SMS notifications, when you connect the smartphone with this android smartwatch,and vibrate to alert you if your phone notification is vibrating. You can reject calls and view message directly from your watch. A best gift for family and friends!",
   },
   {
     id: 58,
@@ -466,6 +514,8 @@ export const products = [
       { type: "Color", value: "White" },
       { type: "Color", value: "Black" },
     ],
+    description:
+      "Smartwatch for step-counter notify you incoming calls, SMS notifications, when you connect the smartphone with this android smartwatch,and vibrate to alert you if your phone notification is vibrating. You can reject calls and view message directly from your watch. A best gift for family and friends!",
   },
   {
     id: 59,
@@ -484,6 +534,8 @@ export const products = [
       { type: "Weight", value: "10kg" },
       { type: "Weight", value: "16kg" },
     ],
+    description:
+      "Smartwatch for step-counter notify you incoming calls, SMS notifications, when you connect the smartphone with this android smartwatch,and vibrate to alert you if your phone notification is vibrating. You can reject calls and view message directly from your watch. A best gift for family and friends!",
   },
   {
     id: 60,
@@ -502,6 +554,8 @@ export const products = [
       { type: "Color", value: "Silver" },
       { type: "Material", value: "Aluminum" },
     ],
+    description:
+      "Smartwatch for step-counter notify you incoming calls, SMS notifications, when you connect the smartphone with this android smartwatch,and vibrate to alert you if your phone notification is vibrating. You can reject calls and view message directly from your watch. A best gift for family and friends!",
   },
   {
     id: 61,
@@ -520,6 +574,8 @@ export const products = [
       { type: "Color", value: "Black" },
       { type: "Color", value: "Red" },
     ],
+    description:
+      "Smartwatch for step-counter notify you incoming calls, SMS notifications, when you connect the smartphone with this android smartwatch,and vibrate to alert you if your phone notification is vibrating. You can reject calls and view message directly from your watch. A best gift for family and friends!",
   },
   {
     id: 62,
@@ -538,6 +594,8 @@ export const products = [
       { type: "Color", value: "White" },
       { type: "Connectivity", value: "Wi-Fi" },
     ],
+    description:
+      "Smartwatch for step-counter notify you incoming calls, SMS notifications, when you connect the smartphone with this android smartwatch,and vibrate to alert you if your phone notification is vibrating. You can reject calls and view message directly from your watch. A best gift for family and friends!",
   },
   {
     id: 63,
@@ -556,6 +614,8 @@ export const products = [
       { type: "Color", value: "Black" },
       { type: "Battery", value: "Up to 10 hours" },
     ],
+    description:
+      "Smartwatch for step-counter notify you incoming calls, SMS notifications, when you connect the smartphone with this android smartwatch,and vibrate to alert you if your phone notification is vibrating. You can reject calls and view message directly from your watch. A best gift for family and friends!",
   },
   {
     id: 64,
@@ -574,6 +634,8 @@ export const products = [
       { type: "Color", value: "Black" },
       { type: "Feature", value: "Noise Cancelling" },
     ],
+    description:
+      "Smartwatch for step-counter notify you incoming calls, SMS notifications, when you connect the smartphone with this android smartwatch,and vibrate to alert you if your phone notification is vibrating. You can reject calls and view message directly from your watch. A best gift for family and friends!",
   },
   {
     id: 65,
@@ -592,6 +654,8 @@ export const products = [
       { type: "Color", value: "Brown" },
       { type: "Color", value: "Black" },
     ],
+    description:
+      "Smartwatch for step-counter notify you incoming calls, SMS notifications, when you connect the smartphone with this android smartwatch,and vibrate to alert you if your phone notification is vibrating. You can reject calls and view message directly from your watch. A best gift for family and friends!",
   },
   {
     id: 66,
@@ -610,6 +674,8 @@ export const products = [
       { type: "Color", value: "Gray" },
       { type: "Capacity", value: "40L" },
     ],
+    description:
+      "Smartwatch for step-counter notify you incoming calls, SMS notifications, when you connect the smartphone with this android smartwatch,and vibrate to alert you if your phone notification is vibrating. You can reject calls and view message directly from your watch. A best gift for family and friends!",
   },
   {
     id: 67,
@@ -628,6 +694,8 @@ export const products = [
       { type: "Color", value: "Silver" },
       { type: "Material", value: "Stainless Steel" },
     ],
+    description:
+      "Smartwatch for step-counter notify you incoming calls, SMS notifications, when you connect the smartphone with this android smartwatch,and vibrate to alert you if your phone notification is vibrating. You can reject calls and view message directly from your watch. A best gift for family and friends!",
   },
   {
     id: 68,
@@ -646,6 +714,8 @@ export const products = [
       { type: "Color", value: "White" },
       { type: "Feature", value: "Smart Control" },
     ],
+    description:
+      "Smartwatch for step-counter notify you incoming calls, SMS notifications, when you connect the smartphone with this android smartwatch,and vibrate to alert you if your phone notification is vibrating. You can reject calls and view message directly from your watch. A best gift for family and friends!",
   },
   {
     id: 69,
@@ -664,6 +734,8 @@ export const products = [
       { type: "Color", value: "Blue" },
       { type: "Resistance", value: "Light/Medium/Heavy" },
     ],
+    description:
+      "Smartwatch for step-counter notify you incoming calls, SMS notifications, when you connect the smartphone with this android smartwatch,and vibrate to alert you if your phone notification is vibrating. You can reject calls and view message directly from your watch. A best gift for family and friends!",
   },
   {
     id: 70,
@@ -682,6 +754,8 @@ export const products = [
       { type: "Color", value: "Black" },
       { type: "Feature", value: "Dual Fan" },
     ],
+    description:
+      "Smartwatch for step-counter notify you incoming calls, SMS notifications, when you connect the smartphone with this android smartwatch,and vibrate to alert you if your phone notification is vibrating. You can reject calls and view message directly from your watch. A best gift for family and friends!",
   },
   {
     id: 71,
@@ -700,6 +774,8 @@ export const products = [
       { type: "Color", value: "Black" },
       { type: "Lighting", value: "RGB" },
     ],
+    description:
+      "Smartwatch for step-counter notify you incoming calls, SMS notifications, when you connect the smartphone with this android smartwatch,and vibrate to alert you if your phone notification is vibrating. You can reject calls and view message directly from your watch. A best gift for family and friends!",
   },
   {
     id: 72,
@@ -718,6 +794,8 @@ export const products = [
       { type: "Color", value: "White" },
       { type: "Connectivity", value: "Wi-Fi" },
     ],
+    description:
+      "Smartwatch for step-counter notify you incoming calls, SMS notifications, when you connect the smartphone with this android smartwatch,and vibrate to alert you if your phone notification is vibrating. You can reject calls and view message directly from your watch. A best gift for family and friends!",
   },
   {
     id: 73,
@@ -736,6 +814,8 @@ export const products = [
       { type: "Color", value: "Silver" },
       { type: "Material", value: "Stainless Steel" },
     ],
+    description:
+      "Smartwatch for step-counter notify you incoming calls, SMS notifications, when you connect the smartphone with this android smartwatch,and vibrate to alert you if your phone notification is vibrating. You can reject calls and view message directly from your watch. A best gift for family and friends!",
   },
   {
     id: 74,
@@ -754,6 +834,8 @@ export const products = [
       { type: "Color", value: "Green" },
       { type: "Material", value: "Nylon" },
     ],
+    description:
+      "Smartwatch for step-counter notify you incoming calls, SMS notifications, when you connect the smartphone with this android smartwatch,and vibrate to alert you if your phone notification is vibrating. You can reject calls and view message directly from your watch. A best gift for family and friends!",
   },
   {
     id: 75,
@@ -772,6 +854,8 @@ export const products = [
       { type: "Color", value: "Beige" },
       { type: "Material", value: "Bamboo" },
     ],
+    description:
+      "Smartwatch for step-counter notify you incoming calls, SMS notifications, when you connect the smartphone with this android smartwatch,and vibrate to alert you if your phone notification is vibrating. You can reject calls and view message directly from your watch. A best gift for family and friends!",
   },
   {
     id: 76,
@@ -790,6 +874,8 @@ export const products = [
       { type: "Color", value: "Warm White" },
       { type: "Feature", value: "Solar" },
     ],
+    description:
+      "Smartwatch for step-counter notify you incoming calls, SMS notifications, when you connect the smartphone with this android smartwatch,and vibrate to alert you if your phone notification is vibrating. You can reject calls and view message directly from your watch. A best gift for family and friends!",
   },
   {
     id: 77,
@@ -808,6 +894,8 @@ export const products = [
       { type: "Color", value: "Blue" },
       { type: "Waterproof", value: "IPX7" },
     ],
+    description:
+      "Smartwatch for step-counter notify you incoming calls, SMS notifications, when you connect the smartphone with this android smartwatch,and vibrate to alert you if your phone notification is vibrating. You can reject calls and view message directly from your watch. A best gift for family and friends!",
   },
   {
     id: 78,
@@ -826,6 +914,8 @@ export const products = [
       { type: "Color", value: "Black" },
       { type: "Feature", value: "Heating Function" },
     ],
+    description:
+      "Smartwatch for step-counter notify you incoming calls, SMS notifications, when you connect the smartphone with this android smartwatch,and vibrate to alert you if your phone notification is vibrating. You can reject calls and view message directly from your watch. A best gift for family and friends!",
   },
   {
     id: 79,
@@ -844,6 +934,8 @@ export const products = [
       { type: "Color", value: "Gray" },
       { type: "Material", value: "Bamboo" },
     ],
+    description:
+      "Smartwatch for step-counter notify you incoming calls, SMS notifications, when you connect the smartphone with this android smartwatch,and vibrate to alert you if your phone notification is vibrating. You can reject calls and view message directly from your watch. A best gift for family and friends!",
   },
   {
     id: 80,
@@ -862,6 +954,8 @@ export const products = [
       { type: "Resistance", value: "Light/Medium/Heavy" },
       { type: "Material", value: "Latex" },
     ],
+    description:
+      "Smartwatch for step-counter notify you incoming calls, SMS notifications, when you connect the smartphone with this android smartwatch,and vibrate to alert you if your phone notification is vibrating. You can reject calls and view message directly from your watch. A best gift for family and friends!",
   },
   {
     id: 81,
@@ -880,6 +974,8 @@ export const products = [
       { type: "Color", value: "Black" },
       { type: "Feature", value: "Cordless" },
     ],
+    description:
+      "Smartwatch for step-counter notify you incoming calls, SMS notifications, when you connect the smartphone with this android smartwatch,and vibrate to alert you if your phone notification is vibrating. You can reject calls and view message directly from your watch. A best gift for family and friends!",
   },
   {
     id: 82,
@@ -898,6 +994,8 @@ export const products = [
       { type: "Color", value: "White" },
       { type: "Connectivity", value: "Wi-Fi" },
     ],
+    description:
+      "Smartwatch for step-counter notify you incoming calls, SMS notifications, when you connect the smartphone with this android smartwatch,and vibrate to alert you if your phone notification is vibrating. You can reject calls and view message directly from your watch. A best gift for family and friends!",
   },
   {
     id: 83,
@@ -916,6 +1014,8 @@ export const products = [
       { type: "Color", value: "Black" },
       { type: "Feature", value: "360 Rotation" },
     ],
+    description:
+      "Smartwatch for step-counter notify you incoming calls, SMS notifications, when you connect the smartphone with this android smartwatch,and vibrate to alert you if your phone notification is vibrating. You can reject calls and view message directly from your watch. A best gift for family and friends!",
   },
   {
     id: 84,
@@ -934,6 +1034,8 @@ export const products = [
       { type: "Color", value: "Green" },
       { type: "Size", value: "2 Person" },
     ],
+    description:
+      "Smartwatch for step-counter notify you incoming calls, SMS notifications, when you connect the smartphone with this android smartwatch,and vibrate to alert you if your phone notification is vibrating. You can reject calls and view message directly from your watch. A best gift for family and friends!",
   },
   {
     id: 85,
@@ -952,6 +1054,8 @@ export const products = [
       { type: "Color", value: "Black" },
       { type: "Material", value: "Stainless Steel" },
     ],
+    description:
+      "Smartwatch for step-counter notify you incoming calls, SMS notifications, when you connect the smartphone with this android smartwatch,and vibrate to alert you if your phone notification is vibrating. You can reject calls and view message directly from your watch. A best gift for family and friends!",
   },
   {
     id: 86,
@@ -970,6 +1074,8 @@ export const products = [
       { type: "Color", value: "Warm White" },
       { type: "Feature", value: "Solar Powered" },
     ],
+    description:
+      "Smartwatch for step-counter notify you incoming calls, SMS notifications, when you connect the smartphone with this android smartwatch,and vibrate to alert you if your phone notification is vibrating. You can reject calls and view message directly from your watch. A best gift for family and friends!",
   },
   {
     id: 87,
@@ -988,6 +1094,8 @@ export const products = [
       { type: "Color", value: "White" },
       { type: "Battery", value: "Up to 12 hours" },
     ],
+    description:
+      "Smartwatch for step-counter notify you incoming calls, SMS notifications, when you connect the smartphone with this android smartwatch,and vibrate to alert you if your phone notification is vibrating. You can reject calls and view message directly from your watch. A best gift for family and friends!",
   },
   {
     id: 88,
@@ -1006,6 +1114,8 @@ export const products = [
       { type: "Color", value: "Black" },
       { type: "Feature", value: "Portable" },
     ],
+    description:
+      "Smartwatch for step-counter notify you incoming calls, SMS notifications, when you connect the smartphone with this android smartwatch,and vibrate to alert you if your phone notification is vibrating. You can reject calls and view message directly from your watch. A best gift for family and friends!",
   },
   {
     id: 89,
@@ -1024,6 +1134,8 @@ export const products = [
       { type: "Color", value: "White" },
       { type: "Feature", value: "HEPA Filter" },
     ],
+    description:
+      "Smartwatch for step-counter notify you incoming calls, SMS notifications, when you connect the smartphone with this android smartwatch,and vibrate to alert you if your phone notification is vibrating. You can reject calls and view message directly from your watch. A best gift for family and friends!",
   },
   {
     id: 90,
@@ -1042,6 +1154,8 @@ export const products = [
       { type: "Color", value: "Red" },
       { type: "Material", value: "PVC" },
     ],
+    description:
+      "Smartwatch for step-counter notify you incoming calls, SMS notifications, when you connect the smartphone with this android smartwatch,and vibrate to alert you if your phone notification is vibrating. You can reject calls and view message directly from your watch. A best gift for family and friends!",
   },
   {
     id: 91,
@@ -1060,6 +1174,8 @@ export const products = [
       { type: "Color", value: "Purple" },
       { type: "Material", value: "TPE" },
     ],
+    description:
+      "Smartwatch for step-counter notify you incoming calls, SMS notifications, when you connect the smartphone with this android smartwatch,and vibrate to alert you if your phone notification is vibrating. You can reject calls and view message directly from your watch. A best gift for family and friends!",
   },
   {
     id: 92,
@@ -1078,6 +1194,8 @@ export const products = [
       { type: "Color", value: "Black" },
       { type: "Connectivity", value: "Wi-Fi" },
     ],
+    description:
+      "Smartwatch for step-counter notify you incoming calls, SMS notifications, when you connect the smartphone with this android smartwatch,and vibrate to alert you if your phone notification is vibrating. You can reject calls and view message directly from your watch. A best gift for family and friends!",
   },
   {
     id: 93,
@@ -1096,6 +1214,8 @@ export const products = [
       { type: "Color", value: "Gray" },
       { type: "Feature", value: "Water-Resistant" },
     ],
+    description:
+      "Smartwatch for step-counter notify you incoming calls, SMS notifications, when you connect the smartphone with this android smartwatch,and vibrate to alert you if your phone notification is vibrating. You can reject calls and view message directly from your watch. A best gift for family and friends!",
   },
   {
     id: 94,
@@ -1114,6 +1234,8 @@ export const products = [
       { type: "Color", value: "White" },
       { type: "Feature", value: "Smart Timer" },
     ],
+    description:
+      "Smartwatch for step-counter notify you incoming calls, SMS notifications, when you connect the smartphone with this android smartwatch,and vibrate to alert you if your phone notification is vibrating. You can reject calls and view message directly from your watch. A best gift for family and friends!",
   },
   {
     id: 95,
@@ -1132,6 +1254,8 @@ export const products = [
       { type: "Color", value: "Black" },
       { type: "Feature", value: "Bluetooth" },
     ],
+    description:
+      "Smartwatch for step-counter notify you incoming calls, SMS notifications, when you connect the smartphone with this android smartwatch,and vibrate to alert you if your phone notification is vibrating. You can reject calls and view message directly from your watch. A best gift for family and friends!",
   },
   {
     id: 96,
@@ -1150,6 +1274,8 @@ export const products = [
       { type: "Color", value: "Gray" },
       { type: "Size", value: "Medium" },
     ],
+    description:
+      "Smartwatch for step-counter notify you incoming calls, SMS notifications, when you connect the smartphone with this android smartwatch,and vibrate to alert you if your phone notification is vibrating. You can reject calls and view message directly from your watch. A best gift for family and friends!",
   },
   {
     id: 97,
@@ -1168,6 +1294,8 @@ export const products = [
       { type: "Color", value: "Black" },
       { type: "Material", value: "Metal" },
     ],
+    description:
+      "Smartwatch for step-counter notify you incoming calls, SMS notifications, when you connect the smartphone with this android smartwatch,and vibrate to alert you if your phone notification is vibrating. You can reject calls and view message directly from your watch. A best gift for family and friends!",
   },
   {
     id: 98,
@@ -1186,6 +1314,8 @@ export const products = [
       { type: "Color", value: "White" },
       { type: "Feature", value: "Portable" },
     ],
+    description:
+      "Smartwatch for step-counter notify you incoming calls, SMS notifications, when you connect the smartphone with this android smartwatch,and vibrate to alert you if your phone notification is vibrating. You can reject calls and view message directly from your watch. A best gift for family and friends!",
   },
   {
     id: 99,
@@ -1204,6 +1334,8 @@ export const products = [
       { type: "Color", value: "Navy Blue" },
       { type: "Material", value: "Cotton" },
     ],
+    description:
+      "Smartwatch for step-counter notify you incoming calls, SMS notifications, when you connect the smartphone with this android smartwatch,and vibrate to alert you if your phone notification is vibrating. You can reject calls and view message directly from your watch. A best gift for family and friends!",
   },
   {
     id: 100,
@@ -1222,6 +1354,8 @@ export const products = [
       { type: "Color", value: "Green" },
       { type: "Feature", value: "Self-Watering" },
     ],
+    description:
+      "Smartwatch for step-counter notify you incoming calls, SMS notifications, when you connect the smartphone with this android smartwatch,and vibrate to alert you if your phone notification is vibrating. You can reject calls and view message directly from your watch. A best gift for family and friends!",
   },
   {
     id: 101,
@@ -1240,6 +1374,8 @@ export const products = [
       { type: "Color", value: "Black" },
       { type: "Feature", value: "Foldable" },
     ],
+    description:
+      "Smartwatch for step-counter notify you incoming calls, SMS notifications, when you connect the smartphone with this android smartwatch,and vibrate to alert you if your phone notification is vibrating. You can reject calls and view message directly from your watch. A best gift for family and friends!",
   },
   {
     id: 102,
@@ -1258,6 +1394,8 @@ export const products = [
       { type: "Color", value: "Black" },
       { type: "Feature", value: "Heart Rate Monitor" },
     ],
+    description:
+      "Smartwatch for step-counter notify you incoming calls, SMS notifications, when you connect the smartphone with this android smartwatch,and vibrate to alert you if your phone notification is vibrating. You can reject calls and view message directly from your watch. A best gift for family and friends!",
   },
   {
     id: 103,
@@ -1276,6 +1414,8 @@ export const products = [
       { type: "Color", value: "Red" },
       { type: "Battery Life", value: "8 Hours" },
     ],
+    description:
+      "Smartwatch for step-counter notify you incoming calls, SMS notifications, when you connect the smartphone with this android smartwatch,and vibrate to alert you if your phone notification is vibrating. You can reject calls and view message directly from your watch. A best gift for family and friends!",
   },
   {
     id: 104,
@@ -1294,6 +1434,8 @@ export const products = [
       { type: "Color", value: "Blue" },
       { type: "Material", value: "Stainless Steel" },
     ],
+    description:
+      "Smartwatch for step-counter notify you incoming calls, SMS notifications, when you connect the smartphone with this android smartwatch,and vibrate to alert you if your phone notification is vibrating. You can reject calls and view message directly from your watch. A best gift for family and friends!",
   },
   {
     id: 105,
@@ -1312,6 +1454,8 @@ export const products = [
       { type: "Color", value: "White" },
       { type: "Feature", value: "Wi-Fi Enabled" },
     ],
+    description:
+      "Smartwatch for step-counter notify you incoming calls, SMS notifications, when you connect the smartphone with this android smartwatch,and vibrate to alert you if your phone notification is vibrating. You can reject calls and view message directly from your watch. A best gift for family and friends!",
   },
   {
     id: 106,
@@ -1330,6 +1474,8 @@ export const products = [
       { type: "Color", value: "Black" },
       { type: "Feature", value: "Portable" },
     ],
+    description:
+      "Smartwatch for step-counter notify you incoming calls, SMS notifications, when you connect the smartphone with this android smartwatch,and vibrate to alert you if your phone notification is vibrating. You can reject calls and view message directly from your watch. A best gift for family and friends!",
   },
   {
     id: 107,
@@ -1348,6 +1494,8 @@ export const products = [
       { type: "Color", value: "Red" },
       { type: "Feature", value: "Cordless" },
     ],
+    description:
+      "Smartwatch for step-counter notify you incoming calls, SMS notifications, when you connect the smartphone with this android smartwatch,and vibrate to alert you if your phone notification is vibrating. You can reject calls and view message directly from your watch. A best gift for family and friends!",
   },
   {
     id: 108,
@@ -1366,6 +1514,8 @@ export const products = [
       { type: "Color", value: "Silver" },
       { type: "Feature", value: "LED Lighting" },
     ],
+    description:
+      "Smartwatch for step-counter notify you incoming calls, SMS notifications, when you connect the smartphone with this android smartwatch,and vibrate to alert you if your phone notification is vibrating. You can reject calls and view message directly from your watch. A best gift for family and friends!",
   },
   {
     id: 109,
@@ -1384,6 +1534,8 @@ export const products = [
       { type: "Color", value: "Black" },
       { type: "Material", value: "Aluminum" },
     ],
+    description:
+      "Smartwatch for step-counter notify you incoming calls, SMS notifications, when you connect the smartphone with this android smartwatch,and vibrate to alert you if your phone notification is vibrating. You can reject calls and view message directly from your watch. A best gift for family and friends!",
   },
   {
     id: 110,
@@ -1402,6 +1554,8 @@ export const products = [
       { type: "Color", value: "Black" },
       { type: "Capacity", value: "10000mAh" },
     ],
+    description:
+      "Smartwatch for step-counter notify you incoming calls, SMS notifications, when you connect the smartphone with this android smartwatch,and vibrate to alert you if your phone notification is vibrating. You can reject calls and view message directly from your watch. A best gift for family and friends!",
   },
   {
     id: 111,
@@ -1421,6 +1575,8 @@ export const products = [
       { type: "Battery Life", value: "20 Hours" },
     ],
     added: "24 Dec 2022",
+    description:
+      "Smartwatch for step-counter notify you incoming calls, SMS notifications, when you connect the smartphone with this android smartwatch,and vibrate to alert you if your phone notification is vibrating. You can reject calls and view message directly from your watch. A best gift for family and friends!",
   },
   {
     id: 112,
@@ -1440,5 +1596,7 @@ export const products = [
       { type: "Material", value: "Stainless Steel" },
     ],
     added: "24 Dec 2022",
+    description:
+      "Smartwatch for step-counter notify you incoming calls, SMS notifications, when you connect the smartphone with this android smartwatch,and vibrate to alert you if your phone notification is vibrating. You can reject calls and view message directly from your watch. A best gift for family and friends!",
   },
 ];
