@@ -183,9 +183,12 @@ export default function Page() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [showFilter]);
 
-  const filteredProducts = useMemo(() => {
+  const [filteredProducts, setFilteredProducts] = useState([]);
+
+  useEffect(() => {
     const localProducts = JSON.parse(localStorage.getItem("productData")) || [];
     let result = [...products, ...localProducts];
+
     if (selectedTab === "Published") {
       result = result.filter((product) => product.status === "Published");
     } else if (selectedTab === "Low Stock") {
@@ -193,6 +196,7 @@ export default function Page() {
     } else if (selectedTab === "Draft") {
       result = result.filter((product) => product.status === "Draft");
     }
+
     if (searchQuery.trim()) {
       const query = searchQuery.toLowerCase();
       result = result.filter(
@@ -203,8 +207,8 @@ export default function Page() {
       );
     }
 
-    return result;
-  }, [selectedTab, searchQuery, products]);
+    setFilteredProducts(result);
+  }, [products, selectedTab, searchQuery]);
 
   const totalItems = filteredProducts.length;
   const totalPages = Math.ceil(totalItems / itemsPerPage);
