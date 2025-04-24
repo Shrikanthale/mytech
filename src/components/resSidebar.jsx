@@ -1,4 +1,3 @@
-// In components/resSidebar.js
 "use client";
 
 import { useState, useRef, useEffect } from "react";
@@ -23,7 +22,6 @@ export default function ResponsiveSidebar({ isMobileHeader = false, onClose }) {
   const isActive = (path) => location === path;
   const [expandedItems, setExpandedItems] = useState({});
 
-  // Create a ref object for each dropdown menu
   const dropdownRefs = useRef({});
 
   const toggleExpand = (label) => {
@@ -217,4 +215,3 @@ export default function ResponsiveSidebar({ isMobileHeader = false, onClose }) {
     </>
   );
 }
-// sidebafr code here

@@ -184,7 +184,8 @@ export default function Page() {
   }, [showFilter]);
 
   const filteredProducts = useMemo(() => {
-    let result = [...products];
+    const localProducts = JSON.parse(localStorage.getItem("productData")) || [];
+    let result = [...products, ...localProducts];
     if (selectedTab === "Published") {
       result = result.filter((product) => product.status === "Published");
     } else if (selectedTab === "Low Stock") {

@@ -158,10 +158,9 @@ export default function EditProduct(productObj) {
     variations: findProduct.variations || [],
     description: findProduct.description,
     tags: findProduct.tags || ["Watch", "Gadget"],
-    images: [], // Array to store uploaded images
+    images: [],
   });
 
-  // New state for managing the tag input
   const [tagInput, setTagInput] = useState("");
 
   const editor = useEditor({
@@ -190,7 +189,6 @@ export default function EditProduct(productObj) {
     }));
   };
 
-  // Add new variation
   const addVariation = () => {
     setFormData((prev) => ({
       ...prev,
@@ -198,7 +196,6 @@ export default function EditProduct(productObj) {
     }));
   };
 
-  // Remove a variation at specified index
   const removeVariation = (index) => {
     setFormData((prev) => ({
       ...prev,
@@ -206,7 +203,6 @@ export default function EditProduct(productObj) {
     }));
   };
 
-  // Update variation property
   const updateVariation = (index, field, value) => {
     setFormData((prev) => {
       const updatedVariations = [...prev.variations];
@@ -218,12 +214,10 @@ export default function EditProduct(productObj) {
     });
   };
 
-  // Handle tag input
   const handleTagInputChange = (e) => {
     setTagInput(e.target.value);
   };
 
-  // Add a new tag when Enter is pressed
   const handleTagKeyDown = (e) => {
     if (e.key === "Enter" && tagInput.trim() !== "") {
       e.preventDefault();
@@ -237,7 +231,6 @@ export default function EditProduct(productObj) {
     }
   };
 
-  // Remove a tag
   const removeTag = (tagToRemove) => {
     setFormData((prev) => ({
       ...prev,
@@ -287,11 +280,13 @@ export default function EditProduct(productObj) {
             </div>
           </div>
           <div className="flex items-center gap-2 mt-4 md:mt-0">
-            <button className="px-4 py-2 border border-gray-300 rounded-md text-gray-700 flex items-center gap-1">
-              <FaTimes className="text-gray-500" />
-              <span>Cancel</span>
-            </button>
-            <button className="px-4 py-2 bg-[#2086BF] text-white rounded-md flex items-center gap-1">
+            <Link href="/products">
+              <button className="px-4 py-2 border border-gray-300 rounded-md text-gray-700 flex items-center gap-1 cursor-pointer">
+                <FaTimes className="text-gray-500" />
+                <span>Cancel</span>
+              </button>
+            </Link>
+            <button className="px-4 py-2 bg-[#2086BF] text-white rounded-md flex items-center gap-1 cursor-pointer">
               <Image src={saveicon} alt="" height={"auto"} width={"auto"} />
               <span>Save Product</span>
             </button>
@@ -370,7 +365,7 @@ export default function EditProduct(productObj) {
                     accept="image/*"
                     multiple
                     onChange={handleImageUpload}
-                    className="hidden" // Hide the default file input
+                    className="hidden"
                     id="image-upload"
                   />
                   <label

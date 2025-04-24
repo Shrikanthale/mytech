@@ -14,7 +14,6 @@ export function generateStaticParams() {
 }
 
 export default async function ProductPage({ params }: Params) {
-  // Await the params object to get the id
   const { id } = await params;
   const product = products.find((p) => String(p.id) === id);
 

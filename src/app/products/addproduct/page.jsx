@@ -31,6 +31,7 @@ import {
 } from "react-icons/fa";
 
 import { products } from "../../../datastore/Products";
+import { useRouter } from "next/navigation";
 
 const MenuBar = ({ editor }) => {
   if (!editor) {
@@ -142,6 +143,8 @@ export default function EditProduct({ params }) {
   const findProduct = products.find(
     (product) => product.id === Number(params.id)
   );
+
+  const router = useRouter();
 
   const [formData, setFormData] = useState({
     name: findProduct?.name || "",
@@ -262,8 +265,23 @@ export default function EditProduct({ params }) {
         description: editorContent,
       }));
     }
-    console.log("Saving product:", { ...formData });
-    alert("Product saved successfully!");
+
+    setTimeout(() => {
+      const existingData =
+        JSON.parse(localStorage.getItem("productData")) || [];
+
+      const newProduct = {
+        ...formData,
+        id: Date.now(),
+      };
+
+      const updatedData = [...existingData, newProduct];
+
+      localStorage.setItem("productData", JSON.stringify(updatedData));
+      alert("Product added successfully! Redirecting to product list...");
+      router.push(`/products`);
+      console.log("All products:", updatedData);
+    }, 0);
   };
 
   return (
