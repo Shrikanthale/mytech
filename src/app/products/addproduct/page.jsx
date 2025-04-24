@@ -273,7 +273,7 @@ export default function EditProduct({ params }) {
         <div className="flex justify-between items-center mb-6 flex-col md:flex-row">
           <div>
             <h1 className="text-2xl font-semibold text-gray-800">
-              Edit Product
+              Add Product
             </h1>
             <div className="text-sm text-gray-500 flex items-center flex-wrap">
               <Link
@@ -304,7 +304,7 @@ export default function EditProduct({ params }) {
                   width={"auto"}
                 />
               </span>
-              <span>Edit Product</span>
+              <span>Add Product</span>
             </div>
           </div>
           <div className="flex items-center gap-2 mt-4 md:mt-0">
